@@ -77,16 +77,6 @@ a {
   text-decoration: none;
 }
 
-/*.slider-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  font-size: 1vm;
-  font-family: Arial;
-}*/
-
 
 .flex-container {
   display: flex;
@@ -109,6 +99,16 @@ a {
 }
 .flex-item-right h2 {
     text-align: center;
+}
+.flex-item-left img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.flex-item-right img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .slider * {
   font-size: 1vw;
