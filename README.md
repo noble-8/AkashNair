@@ -3,7 +3,6 @@ Welcome to my personal website, where I showcase my projects, skills, and experi
 
 ### [Visit My Website: Akash Nair's Personal Website](https://noble-8.github.io/AkashNair/)
 
-[Akash Nair's Personal Website](https://via.placeholder.com/400x100.png?text=Akash+Nair%27s+Personal+Website)](https://noble-8.github.io/AkashNair/)
 
 ### Features
 - About Me: Get to know me, my background, and my journey as a developer.
