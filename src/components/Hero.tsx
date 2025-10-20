@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Download, Linkedin } from 'lucide-react';
+import resumePdf from '../resources/Akash_Nair.pdf';
 
 const Hero: React.FC = () => {
   const scrollToNext = () => {
@@ -83,7 +84,7 @@ const Hero: React.FC = () => {
               </motion.a>
 
               <motion.a
-                href="/resume.pdf"
+                href={resumePdf}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -101,15 +102,23 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            className="absolute bottom-500 left-1/2 transform -translate-x-1/2 text-center"
           >
             <motion.button
               onClick={scrollToNext}
               whileHover={{ y: -2 }}
-              className="p-2 text-gray-400 hover:text-primary-600 transition-colors duration-200 animate-bounce-subtle"
+              className="flex flex-col items-center gap-2 text-gray-400 hover:text-primary-600 transition-colors duration-200 group"
               aria-label="Scroll to next section"
             >
-              <ChevronDown size={32} />
+              <motion.div
+                animate={{ y: [0, 3, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <ChevronDown size={20} />
+              </motion.div>
+              <span className="text-xs font-medium group-hover:text-primary-600 transition-colors duration-200">
+                Learn More
+              </span>
             </motion.button>
           </motion.div>
         </div>
