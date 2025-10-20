@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Users, Star, Download } from 'lucide-react';
+import { ExternalLink, Github, Users, Star, Download, BookOpen } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const projects = [
     {
       title: 'Browser Fingerprint Spoofing',
       description: 'A Chrome extension that spoofs browser fingerprints to maintain user anonymity. Features random generation of navigator properties, hardware configuration, screen size, and canvas elements.',
-      image: 'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/src/resources/browser_fingerprinting.png',
       technologies: ['JavaScript', 'Chrome Extension API', 'Web APIs', 'Privacy Tech'],
       stats: [
         { icon: Users, label: 'Active Users', value: '10,000+' },
@@ -22,33 +22,35 @@ const Projects: React.FC = () => {
       color: 'from-purple-500 to-pink-500',
     },
     {
-      title: 'Amazon Sign-in Analytics Tool',
-      description: 'Built a comprehensive analytics platform for Amazon\'s sign-in workflow, processing 4 million queries per day. Implemented using AWS Lambda, SQS, and Redshift with 100% test coverage.',
-      image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Java', 'AWS Lambda', 'SQS', 'Redshift', 'Mockito'],
+      title: 'Physics Tutor AI',
+      description: 'A sophisticated AI-powered physics tutoring application built with React, TypeScript, and OpenAI GPT models. Features adaptive learning, Socratic questioning, misconception detection, and personalized education with comprehensive analytics.',
+      image: '/src/resources/physics_tutor_thumbnail.png',
+      technologies: ['React', 'TypeScript', 'OpenAI GPT', 'Supabase', 'Tailwind CSS', 'Vite'],
       stats: [
-        { icon: Users, label: 'Daily Queries', value: '4M+' },
-        { icon: Star, label: 'Uptime', value: '99.99%' },
+        { icon: Star, label: 'AI Model', value: 'GPT-3.5' },
+        { icon: Users, label: 'Learning Modes', value: '5+' },
+        { icon: Download, label: 'Analytics', value: 'Real-time' },
       ],
       links: {
-        github: '#',
-        live: '#',
+        github: 'https://github.com/noble-8/Ai_powered_physics-tutor',
+        live: 'https://ai-physics-tutor-cha-3vzl.bolt.host/',
       },
       featured: true,
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-indigo-500 to-purple-500',
     },
     {
-      title: 'Real-time Bidding System',
-      description: 'Developed a high-performance real-time bidding system with 5ms latency for mobile behavioral retargeting. Utilized Bloom Filters, Apache Kafka, and Aerospike for optimal performance.',
-      image: 'https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&w=800',
+      title: 'Real-time Analytics Solution',
+      description: `Architected and implemented a real-time data ingestion and aggregation system using Druid and Kafka to monitor 90 million daily notifications. \\n
+      Reduced debugging time for Ops by eliminating manual log analysis and enabled automatic, real-time client reporting on notification yield, successfully scaling a pre-existing system which struggled with real-time demands. \\n
+      \n Expanded this Database to track user journeys, DAUs, and MAUs`,
+      image: '/src/resources/druid.png',
       technologies: ['Java', 'Apache Kafka', 'Aerospike', 'Bloom Filters', 'Redis'],
       stats: [
         { icon: Users, label: 'Latency', value: '5ms' },
         { icon: Star, label: 'Throughput', value: '10K/s' },
       ],
       links: {
-        github: '#',
-        live: '#',
+        medium: 'https://medium.com/@nairindebonair/using-druid-to-track-notification-yeild-12924f5d1686',
       },
       featured: false,
       color: 'from-green-500 to-emerald-500',
@@ -148,28 +150,45 @@ const Projects: React.FC = () => {
 
                           {/* Links */}
                           <div className="flex gap-4">
-                            <motion.a
-                              href={project.links.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                              className="flex items-center gap-2 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200"
-                            >
-                              <Github size={18} />
-                              Code
-                            </motion.a>
-                            <motion.a
-                              href={project.links.live}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                              className="flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors duration-200"
-                            >
-                              <ExternalLink size={18} />
-                              Live Demo
-                            </motion.a>
+                            {project.links.github && (
+                              <motion.a
+                                href={project.links.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="flex items-center gap-2 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                              >
+                                <Github size={18} />
+                                Code
+                              </motion.a>
+                            )}
+                            {project.links.live && (
+                              <motion.a
+                                href={project.links.live}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors duration-200"
+                              >
+                                <ExternalLink size={18} />
+                                Live Demo
+                              </motion.a>
+                            )}
+                            {project.links.medium && (
+                              <motion.a
+                                href={project.links.medium}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200"
+                              >
+                                <BookOpen size={18} />
+                                Article
+                              </motion.a>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -233,26 +252,42 @@ const Projects: React.FC = () => {
 
                     {/* Links */}
                     <div className="flex gap-2">
-                      <motion.a
-                        href={project.links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        className="flex items-center gap-1 px-3 py-2 border border-gray-300 text-gray-700 rounded text-sm hover:bg-gray-50 transition-colors duration-200"
-                      >
-                        <Github size={14} />
-                        Code
-                      </motion.a>
-                      <motion.a
-                        href={project.links.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        className="flex items-center gap-1 px-3 py-2 bg-primary-600 text-white rounded text-sm hover:bg-primary-700 transition-colors duration-200"
-                      >
-                        <ExternalLink size={14} />
-                        Demo
-                      </motion.a>
+                      {project.links.github && (
+                        <motion.a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          className="flex items-center gap-1 px-3 py-2 border border-gray-300 text-gray-700 rounded text-sm hover:bg-gray-50 transition-colors duration-200"
+                        >
+                          <Github size={14} />
+                          Code
+                        </motion.a>
+                      )}
+                      {project.links.live && (
+                        <motion.a
+                          href={project.links.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          className="flex items-center gap-1 px-3 py-2 bg-primary-600 text-white rounded text-sm hover:bg-primary-700 transition-colors duration-200"
+                        >
+                          <ExternalLink size={14} />
+                          Demo
+                        </motion.a>
+                      )}
+                      {project.links.medium && (
+                        <motion.a
+                          href={project.links.medium}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          className="flex items-center gap-1 px-3 py-2 bg-green-600 text-white rounded text-sm hover:bg-green-700 transition-colors duration-200"
+                        >
+                          <BookOpen size={14} />
+                          Article
+                        </motion.a>
+                      )}
                     </div>
                   </div>
                 )}

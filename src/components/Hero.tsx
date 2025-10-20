@@ -102,7 +102,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="absolute bottom-500 left-1/2 transform -translate-x-1/2 text-center"
+            className="absolute bottom-5000 left-1/2 transform -translate-x-1/2 text-center"
           >
             <motion.button
               onClick={scrollToNext}
