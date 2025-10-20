@@ -7,7 +7,7 @@ const Projects: React.FC = () => {
     {
       title: 'Browser Fingerprint Spoofing',
       description: 'A Chrome extension that spoofs browser fingerprints to maintain user anonymity. Features random generation of navigator properties, hardware configuration, screen size, and canvas elements.',
-      image: '/src/resources/browser_fingerprinting.png',
+      image: '/images/browser_fingerprinting.png',
       technologies: ['JavaScript', 'Chrome Extension API', 'Web APIs', 'Privacy Tech'],
       stats: [
         { icon: Users, label: 'Active Users', value: '10,000+' },
@@ -24,7 +24,7 @@ const Projects: React.FC = () => {
     {
       title: 'Physics Tutor AI',
       description: 'A sophisticated AI-powered physics tutoring application built with React, TypeScript, and OpenAI GPT models. Features adaptive learning, Socratic questioning, misconception detection, and personalized education with comprehensive analytics.',
-      image: '/src/resources/physics_tutor_thumbnail.png',
+      image: '/images/physics_tutor_thumbnail.png',
       technologies: ['React', 'TypeScript', 'OpenAI GPT', 'Supabase', 'Tailwind CSS', 'Vite'],
       stats: [
         { icon: Star, label: 'AI Model', value: 'GPT-3.5' },
@@ -43,7 +43,7 @@ const Projects: React.FC = () => {
       description: `Architected and implemented a real-time data ingestion and aggregation system using Druid and Kafka to monitor 90 million daily notifications. \\n
       Reduced debugging time for Ops by eliminating manual log analysis and enabled automatic, real-time client reporting on notification yield, successfully scaling a pre-existing system which struggled with real-time demands. \\n
       \n Expanded this Database to track user journeys, DAUs, and MAUs`,
-      image: '/src/resources/druid.png',
+      image: '/images/druid.png',
       technologies: ['Java', 'Apache Kafka', 'Aerospike', 'Bloom Filters', 'Redis'],
       stats: [
         { icon: Users, label: 'Latency', value: '5ms' },
