@@ -11,7 +11,12 @@ const About: React.FC = () => {
   ];
 
   const highlights = [
-    'Enhanced sign-in security at Amazon with automatic passkey enrollment',
+    {
+      text: 'Enhanced sign-in security at Amazon with automatic passkey enrollment',
+      hasLink: true,
+      linkText: 'What is a passkey? Click here to find out.',
+      linkUrl: 'https://noble-8.github.io/passkeys/'
+    },
     'Reduced SMS costs by 48% using ML models to filter fraudulent accounts',
     'Built scalable analytics tool processing 4M queries per day',
     'Increased client retention by 15% through innovative database solutions',
@@ -73,7 +78,27 @@ const About: React.FC = () => {
                   className="flex items-start gap-3"
                 >
                   <div className="w-2 h-2 bg-primary-600 rounded-full mt-3 flex-shrink-0"></div>
-                  <p className="text-gray-700">{highlight}</p>
+                  <div className="text-gray-700">
+                    {typeof highlight === 'string' ? (
+                      <p>{highlight}</p>
+                    ) : (
+                      <div>
+                        <p>{highlight.text}</p>
+                        {highlight.hasLink && (
+                          <p className="mt-2">
+                            <a 
+                              href={highlight.linkUrl} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-primary-600 hover:text-primary-700 font-semibold underline"
+                            >
+                              {highlight.linkText}
+                            </a>
+                          </p>
+                        )}
+                      </div>
+                    )}
+                  </div>
                 </motion.div>
               ))}
             </div>

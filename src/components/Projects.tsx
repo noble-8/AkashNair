@@ -39,8 +39,24 @@ const Projects: React.FC = () => {
       color: 'from-indigo-500 to-purple-500',
     },
     {
+      title: 'WebAuthn Passkey Demo',
+      description: 'Experience passwordless authentication using the Web Authentication API. Register a passkey and see the public key and challenge in action. Demonstrates modern security standards with public-key cryptography for secure authentication, supporting platform authenticators like Touch ID, Face ID, and Windows Hello.',
+      image: '/images/passkeys.png',
+      technologies: ['WebAuthn', 'JavaScript', 'Web APIs', 'Security', 'Authentication', 'Crypto'],
+      stats: [
+        { icon: Star, label: 'Security', value: 'Public-Key' },
+        { icon: Users, label: 'Platforms', value: 'All' },
+        { icon: Download, label: 'Storage', value: 'Local' },
+      ],
+      links: {
+        live: 'https://noble-8.github.io/passkeys/',
+      },
+      featured: true,
+      color: 'from-blue-500 to-cyan-500',
+    },
+    {
       title: 'Real-time Analytics Solution',
-      description: `Architected and implemented a real-time data ingestion and aggregation system using Druid and Kafka to monitor 90 million daily notifications. \\n
+      description: `Architected and implemented a real-time data ingestion and aggregation system using **Druid** and **Kafka** to monitor 90 million daily notifications. \\n
       Reduced debugging time for Ops by eliminating manual log analysis and enabled automatic, real-time client reporting on notification yield, successfully scaling a pre-existing system which struggled with real-time demands. \\n
       \n Expanded this Database to track user journeys, DAUs, and MAUs`,
       image: '/images/druid.png',
